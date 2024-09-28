@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Libro</title>
+    <link rel="stylesheet" href="../CSS/styless.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        label {
+            flex: 0 0 150px;
+            /* Ancho fijo para las etiquetas */
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        input[type="file"] {
+            flex: 1;
+            /* Dejar que el campo crezca */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .form-group-horizontal {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .form-group-horizontal .form-group {
+            flex: 0 0 48%;
+            /* Cada campo ocupa el 48% del ancho */
+            margin-bottom: 20px;
+        }
+
+        /* Ajustar para pantallas más pequeñas */
+        @media screen and (max-width: 768px) {
+            .form-group-horizontal .form-group {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Carga de Libros </h2>
+    <form action="procesar_libro.php" method="post" enctype="multipart/form-data">
+        <div class="form-group-horizontal">
+
+            <div class="form-group">
+                <label for="titulo">Título del libro:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+            </div>
+
+            <div class="form-group">
+                <label for="editorial">Editorial:</label>
+                <input type="text" id="editorial" name="editorial" required>
+            </div>
+
+            <div class="form-group">
+                <label for="materia">Materia:</label>
+                <input type="text" id="materia" name="materia" required>
+            </div>
+
+            <div class="form-group">
+                <label for="copias">Cantidad de copias:</label>
+                <input type="number" id="copias" name="copias" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paginas">Cantidad de páginas:</label>
+                <input type="number" id="paginas" name="paginas" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="anio">Año de edición:</label>
+                <input type="number" id="anio" name="anio" min="1000" max="9999" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Imagen de portada:</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            </div>
+
+        </div>
+
+        <button type="submit">Ingresar libro</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Avanzada - Biblioteca</title>
+    <link rel="stylesheet" href="../CSS/styless.css"/>
+    <link rel="stylesheet" href="../SCRIPS/scrips.js"/>
+</head>
+<body>
+
+<div id="Busqueda">
+    <h2 id="titulo">BUSCAR</h2>
+
+    <!-- Barra de búsqueda simple -->
+    <div id="Buscar">
+        <label for="simple-search">Buscar libro</label>
+        <input type="text" id="simple-search" placeholder="Introduce el término de búsqueda...">
+    </div>
+
+    <!-- Botón para desplegar campos avanzados -->
+    <div id="BusquedaAvanzada" onclick="toggleAdvancedSearch()">Mostrar búsqueda avanzada ▼</div>
+
+    <!-- Campos avanzados dentro de un solo div -->
+    <div id="camposBusquedaAvanzada">
+        <div id="BuscarAvanzado">
+            <div>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" placeholder="Buscar por título...">
+            </div>
+
+            <div>
+                <label for="autor">Autor</label>
+                <input type="text" id="autor" placeholder="Buscar por autor...">
+            </div>
+
+            <div>
+                <label for="tipo-material">Tipo de Material</label>
+                <select id="tipo-material">
+                    <option value="">Selecciona un tipo</option>
+                    <option value="libro">Libro</option>
+                    <option value="revista">Revista</option>
+                    <option value="articulo">Artículo</option>
+                    <option value="multimedia">Multimedia</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="genero">Género</label>
+                <select id="genero">
+                    <option value="">Selecciona un género</option>
+                    <option value="ficcion">Ficción</option>
+                    <option value="no-ficcion">No ficción</option>
+                    <option value="poesia">Poesía</option>
+                    <option value="biografia">Biografía</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="editorial">Editorial</label>
+                <input type="text" id="editorial" placeholder="Buscar por editorial...">
+            </div>
+
+            <div>
+                <label for="n-inventario">Nº de Inventario</label>
+                <input type="text" id="n-inventario" placeholder="Buscar por número de inventario...">
+            </div>
+
+            <div>
+                <label for="coleccion">Colección</label>
+                <input type="text" id="coleccion" placeholder="Buscar por colección...">
+            </div>
+
+            <div>
+                <label for="tema">Tema</label>
+                <input type="text" id="tema" placeholder="Buscar por tema...">
+            </div>
+
+            <div>
+                <label for="etiquetas">Etiquetas</label>
+                <input type="text" id="etiquetas" placeholder="Buscar por etiquetas...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón para buscar -->
+    <button id="Boton-Buscar" onclick="buscar()">Buscar</button>
+
+    <!-- Resultados de la búsqueda -->
+    <div id="resultados">
+        <!-- Aquí se mostrarán los resultados de la búsqueda -->
+    </div>
+</div>
+<!--
+<script>
+    function toggleAdvancedSearch() {
+        var advancedSearchDiv = document.getElementById('camposBusquedaAvanzada');
+        var showAdvanced = document.getElementById('BusquedaAvanzada');
+
+        // Cambiar la visibilidad y altura
+        if (advancedSearchDiv.classList.contains('visible')) {
+            advancedSearchDiv.classList.remove('visible');
+            showAdvanced.innerHTML = 'Mostrar búsqueda avanzada ▼';
+        } else {
+            advancedSearchDiv.classList.add('visible');
+            showAdvanced.innerHTML = 'Ocultar búsqueda avanzada ▲';
+        }
+    }
+
+    function buscar() {
+        // Obtener los valores de la búsqueda simple
+        var simpleSearch = document.getElementById("simple-search").value;
+
+        // Obtener los valores de los campos avanzados
+        var titulo = document.getElementById("titulo").value;
+        var autor = document.getElementById("autor").value;
+        var tipoMaterial = document.getElementById("tipo-material").value;
+        var genero = document.getElementById("genero").value;
+        var editorial = document.getElementById("editorial").value;
+        var nInventario = document.getElementById("n-inventario").value;
+        var coleccion = document.getElementById("coleccion").value;
+        var tema = document.getElementById("tema").value;
+        var etiquetas = document.getElementById("etiquetas").value;
+
+        // Simular una búsqueda y mostrar los resultados
+        var resultadosDiv = document.getElementById("resultados");
+        resultadosDiv.innerHTML = "<p><strong>Resultados de la búsqueda:</strong></p>";
+
+        // Aquí se puede agregar una lógica de búsqueda real
+        if (simpleSearch || titulo || autor || tipoMaterial || genero || editorial || nInventario || coleccion || tema || etiquetas) {
+            // Si hay un resultado, mostrarlo
+            resultadosDiv.innerHTML += "<p><strong>Título:</strong> " + (titulo || "Libro Ejemplo") + "</p>" +
+                "<p><strong>Autor:</strong> " + (autor || "Autor Ejemplo") + "</p>" +
+                "<p><strong>Tipo de Material:</strong> " + (tipoMaterial || "Libro") + "</p>" +
+                "<p><strong>Género:</strong> " + (genero || "Ficción") + "</p>" +
+                "<p><strong>Editorial:</strong> " + (editorial || "Editorial Ejemplo") + "</p>" +
+                "<p><strong>Nº de Inventario:</strong> " + (nInventario || "12345") + "</p>" +
+                "<p><strong>Colección:</strong> " + (coleccion || "Colección Ejemplo") + "</p>" +
+                "<p><strong>Tema:</strong> " + (tema || "Tema Ejemplo") + "</p>" +
+                "<p><strong>Etiquetas:</strong> " + (etiquetas || "Etiqueta Ejemplo") + "</p>";
+        } else {
+            resultadosDiv.innerHTML += "<p>No se encontraron resultados.</p>";
+        }
+    }
+</script>-->
+
+</body>
+</html>
