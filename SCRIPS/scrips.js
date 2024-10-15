@@ -1,4 +1,5 @@
-function toggleAdvancedSearch() {
+function toggleAdvancedSearch() 
+{
     var advancedSearchDiv = document.getElementById('camposBusquedaAvanzada');
     var showAdvanced = document.getElementById('BusquedaAvanzada');
 
@@ -11,7 +12,8 @@ function toggleAdvancedSearch() {
         showAdvanced.innerHTML = 'Ocultar búsqueda avanzada ▲';
     }
 }
-function buscar() {
+function buscar() 
+{
     // Obtener los valores de la búsqueda simple
     var simpleSearch = document.getElementById("simple-search").value;
 
