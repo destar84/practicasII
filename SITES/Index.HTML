@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Botones e Íconos</title>
+    <link rel="stylesheet" href="../CSS/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="iconos-superior">
+            <!--<i class="fa-solid fa-house"></i> -->
+            <!-- Link al perfil del usuario con nombre dinámico -->
+            <a href="perfil_usuario.html"><i class="fas fa-user"></i> <span id="nombreUsuarioIcono"></span></a>
+            <a href="configuracion.html"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+
+    <div class="contenedor-central">
+        <a href="ingresoh.html" class="boton">
+            <i class="fas fa-file"></i>Agregar
+        </a>
+        <a href="busqueda.html" class="boton">
+            <i class="fas fa-search"></i> Búsqueda
+        </a>
+        <a href="Prestamo.html" class="boton">
+            <i class="fas fa-wallet"></i> Préstamo
+        </a>
+    </div>
+    <script>
+        // Recuperar el nombre de usuario del localStorage y mostrarlo en el icono
+        const nombreUsuario = localStorage.getItem('nombreUsuario');
+        if (nombreUsuario) {
+            document.getElementById('nombreUsuarioIcono').textContent = nombreUsuario;
+        } else {
+            document.getElementById('nombreUsuarioIcono').textContent = "Invitado";
+        }
+    </script>
+</body>
+</html>

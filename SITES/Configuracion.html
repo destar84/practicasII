@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración</title>
+    <link rel="stylesheet" href="../CSS/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="iconos-superior">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <i class="fas fa-user"></i>
+    
+            <!-- Link al ícono de configuración -->
+            <i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+    <div class="configuracion-container">
+        <h1>Configuración</h1>
+    
+        <div class="search-box">
+            <!-- Botón +Usuario a la izquierda -->
+            <button id="usuarioBtn" onclick="location.href='Agregar_usuario.html'">+Usuario</button>
+            <!-- Label e input al centro -->
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" placeholder="Ingrese un nombre de usuario">
+            <!-- Botón Buscar a la derecha -->
+            <button id="Buscarbtn" onclick="buscarUsuario()">Buscar</button>
+        </div>
+    
+        <div id="resultado" class="resultado-box">
+            <!-- Aquí siempre se muestran los títulos de las columnas -->
+            <div class="usuario-grid">
+                <div><strong>Usuario</strong></div>
+                <div><strong>Tipo de Usuario</strong></div>
+                <div><strong>Estado</strong></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Función para buscar usuario
+        function buscarUsuario() {
+            const username = document.getElementById('username').value;
+            const resultado = document.getElementById('resultado');
+            
+            // Ejemplo de datos de usuario (podría provenir de una API)
+            const usuario = {
+                nombre: username,
+                tipo: 'Administrador',
+                estado: 'Activo'
+            };
+
+            // Mostrar resultado
+            if (username) {
+                resultado.innerHTML += `
+                    <div class="usuario-grid">
+                    <div>${usuario.nombre}</div>
+                    <div>${usuario.tipo}</div>
+                    <div>${usuario.estado}<div>
+                    </div>
+                `;
+            } else {
+                resultado.innerHTML = `<p>Por favor, ingrese un nombre de usuario.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

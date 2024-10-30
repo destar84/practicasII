@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestamos</title>
+    <link rel="stylesheet" href="../CSS/styless.css">
+    <script src="../SCRIPS/scrips.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="iconos-superior">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <i class="fas fa-user"></i>
+            <!-- Link al ícono de configuración -->
+            <a href="configuracion.html"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+
+<div id="Pagina_Prestamos"> 
+     <div class="contenedor">
+        <div class="encabezado">
+
+            <h2>Prestamos</h2>
+        </div>
+         <form id="IngDatos">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" required>
+
+        <label for="celular">Celular</label>
+        <input type="number" name="celular" id="celular" required>
+
+        <label for="entrega">Entrega</label>
+        <input type="date" name="entrega" id="entrega">
+
+        <label for="devolucion">Devolucion</label>
+        <input type="date" name="devolucion" id="devolucion">
+
+        <div class="botones">
+            <button type="submit">Agregar</button>
+            <button type="submit" id="btneliminar" onclick="Eliminar()">Eliminar</button>
+        </div>
+         </form>
+
+            <button id="btnMostrar" onclick="mostrarDatos()">Mostrar Datos</button>
+
+        <table id="Datos" style="display: none;">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Celular</th>
+                <th>Entrega</th>
+                <th>Devolucion</th>
+            </tr>
+            </thead>
+                <tbody id="DatosBody">
+            <!-- Los datos se insertarán aquí al presionar el botón -->
+                </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>

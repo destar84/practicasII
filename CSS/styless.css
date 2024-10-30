@@ -1,21 +1,28 @@
 /* Estilo general del cuerpo */
-body
-{
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    background-image: url(../IMG/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-attachment: fixed;
+   
 }
 #pantalla_busqueda
 {
 /* Estilo para el contenedor principal */
 #Busqueda {
-    max-width: 800px;
+    max-width: 800px; /* Puedes ajustar esto según tu necesidad */
     margin: auto;
     padding: 20px;
-    background:antiquewhite ;
+    background: antiquewhite;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 600px; /* O el valor mínimo que prefieras */
+    width: 80%; /* Se ajustará pero mantendrá este ancho mínimo */
+
 }
 
 /* Estilo del título */
@@ -104,73 +111,446 @@ select {
     background-color: #f9f9f9;
 }
 }
-#Carga_de_libros
+#Carga_de_libros 
 {
-    .Contenedor {
-        max-width: 600px;
-        margin: 20px auto;
-        background: white;
-        padding: 30px;
-        border-radius: 18px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    .Contenedor 
+    {
+    max-width: 800px; 
+    margin: auto;
+    padding: 20px;
+    background: antiquewhite;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 500px;  
+    width: 80%; 
     }
-    
-    .Encabezado {
-    
-        background-color: rgb(200, 202, 202);
-        padding: 10px 0;
-        text-align: center;
-        color: white;
-        margin: 0;
-        width: 100%;
-        border-radius: 0px;
-    
-    
+.encabezado
+    {
+    text-align: center;
+    color: #333;
+
     }
-    
-    img {
-    
+    img 
+    {
+
         align-items: left;
     }
-    
-    h2 {
-    
-        text-align: left;
+
+    h2 
+    {
+
+        text-align: center;
         color: black;
-        text-decoration: underline;
         margin-left: 10px;
-    
+
     }
-    
-    h3 {
-    
+
+    h3 
+    {
+
         text-align: left;
         color: black;
-    
-    
-    
-    
+
+
+
+
     }
-    
-    form {
+
+    input[type="text"],
+    select 
+    {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    form 
+    {
         display: grid;
-        grid-template-columns: 1fr 2fr;
         gap: 15px;
     }
-    
-    label {
+
+    label 
+    {
         margin-bottom: 0;
         color: #000000;
     }
+
+    button 
+    {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007BFF;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover 
+    {
+        background-color: #0056b3;
+    }
+}
+#Pagina_Prestamos
+{
+.contenedor
+{
+    max-width: 800px; /* Puedes ajustar esto según tu necesidad */
+    margin: auto;
+    padding: 20px;
+    background: antiquewhite;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 600px; /* O el valor mínimo que prefieras */
+    width: 80%; /* Se ajustará pero mantendrá este ancho mínimo */
+
+}
+.encabezado
+{
+    text-align: center;
+    color: #333;
+
+}
+/* Estilo de los formularios */
+form
+{
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Estilo para etiquetas */
+label 
+{
+    margin: 10px 0 5px; 
+}
+
+/* Estilo para entradas de texto */
+input[type="text"],
+input[type="number"],
+input[type="date"] 
+{
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.botones 
+{
+    display: flex; 
+    flex-direction: column; 
+}
+
+.botones button 
+{
+    padding: 10px; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+/* Estilos para el botón de agregar */
+.botones button:not(#btneliminar) 
+{
+    background-color: #007BFF; 
+}
+
+.botones button:hover:not(#btneliminar) 
+{
+    background-color: #007BFF; 
+}
+
+/* Estilos para el botón de eliminar */
+#btneliminar 
+{
+    background-color: #dc3545; 
+}
+
+#btneliminar:hover 
+{
+    background-color: #c82333; 
+}
+
+/* Estilos para el botón de mostrar datos */
+#btnMostrar 
+{
+    background-color: #007BFF; 
+    color: white; 
+    padding: 10px;
+    border: none; 
+    border-radius: 4px;
+    cursor: pointer; 
+    margin-top: 10px; 
+    width: 100%; 
+    transition: background-color 0.3s ease; 
+}
+
+#btnMostrar:hover 
+{
+    background-color: #0056b3; 
+}
+
+/* Tabla */
+table 
+{
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+th, td 
+{
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+}
+
+th 
+{
+    background-color: #f1f1f1; 
+}
+}
+
+    /* CSS Index.html */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+        position: absolute;
+        top: 0;
+    }
+    
+    .iconos-superior i {
+        margin-left: 20px;
+        font-size: 1.5rem;
+        color: #333;
+        cursor: pointer;
+    }
+    
+    .contenedor-central {
+        background-color:antiquewhite;
+        padding: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .boton {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .boton i {
+        font-size: 1.5rem;
+    }
+    
+    .boton:hover {
+        background-color: #0056b3;
+    
+    }
+    /* CSS Configuracion.html */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f9;
+    }
+    
+    .configuracion-container { 
+        max-width: 800px; /* Puedes ajustar esto según tu necesidad */
+        margin: auto;
+        padding: 20px;
+        background: antiquewhite;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-width: 600px; /* O el valor mínimo que prefieras */
+        width: 80%; /* Se ajustará pero mantendrá este ancho mínimo */
+    
+    }
+    
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex: 2;
+        margin: 0 10px;
+    }
     
     button {
-        padding: 5px;
-        background-color: #6ad483;
-        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
     
     button:hover {
-    
-        background-color: #4dc567;
+        background-color: #218838;
     }
-}
+    
+    /* Grid styles */
+    .usuario-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        background-color:antiquewhite;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .usuario-grid div {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .usuario-grid div:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    
+    .usuario-grid div:nth-child(-n+3) {
+        font-weight: bold;
+        background-color: #e9ecef;
+    }
+    
+    .usuario-grid div:last-child {
+        border-bottom: none;
+    }
+    
+    
+    /* CSS agregar_usuario.html */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .container {
+        max-width: 800px; /* Puedes ajustar esto según tu necesidad */
+        margin: auto;
+        padding: 20px;
+        background: antiquewhite;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        min-width: 600px; /* O el valor mínimo que prefieras */
+        width: 80%; /* Se ajustará pero mantendrá este ancho mínimo */
+    
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    input, select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    .btn-agregar-usuario {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 20px;
+    }
+    
+    .btn-agregar-usuario:hover {
+        background-color: #218838;
+    }
+    

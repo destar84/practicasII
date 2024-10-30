@@ -1,3 +1,4 @@
+//busqueda
 function toggleAdvancedSearch() 
 {
     var advancedSearchDiv = document.getElementById('camposBusquedaAvanzada');
@@ -46,5 +47,83 @@ function buscar()
             "<p><strong>Etiquetas:</strong> " + (etiquetas || "Etiqueta Ejemplo") + "</p>";
     } else {
         resultadosDiv.innerHTML += "<p>No se encontraron resultados.</p>";
+    }
+}
+
+
+//prestamos
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('IngDatos');
+    const table = document.getElementById('Datos');
+    const btnEliminar = document.getElementById('btneliminar');
+    const datosBody = document.getElementById('DatosBody');
+
+    // Manejar el evento de envío del formulario
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Evitar que el formulario se envíe
+
+        // Obtener los valores 
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
+        const celular = document.getElementById('celular').value;
+        const entrega = document.getElementById('entrega').value;
+        const devolucion = document.getElementById('devolucion').value;
+
+        // Crear una nueva fila y los datos
+        const newRow = datosBody.insertRow();
+
+        newRow.innerHTML = `
+            <td>${nombre}</td>
+            <td>${apellido}</td>
+            <td>${celular}</td>
+            <td>${entrega}</td>
+            <td>${devolucion}</td>
+        `;
+
+        // Limpiar los campos del formulario
+        form.reset();
+    });
+
+    // Manejar la eliminación de filas
+    function Eliminar() {
+        btnEliminar.addEventListener('click', () => {
+            const rows = datosBody.getElementsByTagName('tr');
+
+            // Recorremos las filas de la tabla
+            for (let i = rows.length - 1; i >= 0; i--) {
+                const row = rows[i];
+                // Verificar si la fila está seleccionada
+                if (row.classList.contains('selected')) {
+                    datosBody.deleteRow(i); // Eliminar la fila
+                }
+            }
+        });
+    }
+
+    // Hacer clic en una fila para seleccionarla
+    datosBody.addEventListener('click', (event) => {
+        const target = event.target.closest('tr');
+        if (target) {
+            // Alternar la clase "selected" para destacar la fila
+            target.classList.toggle('selected');
+        }
+    });
+});
+
+// Función para mostrar u ocultar los datos
+function mostrarDatos() {
+    const form = document.getElementById('IngDatos');
+    const datosTable = document.getElementById('Datos');
+    const btnMostrar = document.getElementById('btnMostrar');
+
+    // Alternar visibilidad
+    if (datosTable.style.display === "none" || datosTable.style.display === "") {
+        form.style.display = "none"; // Ocultar el formulario
+        datosTable.style.display = "table"; // Mostrar la tabla
+        btnMostrar.textContent = "Ocultar Datos";
+    } else {
+        form.style.display = "flex"; // Mostrar el formulario
+        datosTable.style.display = "none"; // Ocultar la tabla
+        btnMostrar.textContent = "Mostrar Datos";
     }
 }

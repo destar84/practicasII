@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <link rel="stylesheet" href="../CSS/styless.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="iconos-superior">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <i class="fas fa-user"></i>
+            <!-- Link al ícono de configuración -->
+            <a href="configuracion.html"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Nombre de Usuario</h1>
+        <form>
+            <div class="form-group">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+            </div>
+            <div class="form-group">
+                <label for="nombreUsuario">Nombre de Usuario:</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div class="form-group">
+                <label for="tipoUsuario">Tipo de Usuario:</label>
+                <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Usuario">Usuario</option>
+                </select>
+            </div>
+            <button type="submit">Crear</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('formAgregarUsuario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nombreUsuario = document.getElementById('nombreUsuario').value;
+            localStorage.setItem('nombreUsuario', nombreUsuario); // Guardar nombre de usuario en localStorage
+            alert('Usuario ' + nombreUsuario + ' creado exitosamente');
+            window.location.href = 'index.html'; // Redirigir a la página principal
+        });
+    </script>
+</body>
+</html>
